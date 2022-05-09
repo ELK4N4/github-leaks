@@ -9,8 +9,7 @@ app.use(express.static('public'));
 app.get('/login', (req, res) => {
   const user = req.query.user;
   const pass = req.query.pass;
-  // if(user === process.env.USER && pass === process.env.PASS) {
-  if(user === "code" && pass === "leaks") {
+  if(user === process.env.USER && pass === process.env.PASS) {
       return res.sendFile(path.join(__dirname + '/html/success.html'));
   }
   res.sendFile(path.join(__dirname + '/html/failed.html'));
